@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"runtime"
 )
 
 func FindUSBDrive() (string, error) {
@@ -15,7 +14,7 @@ func FindUSBDrive() (string, error) {
 	case true:
 		return scanLinuxDrives()
 	default:
-		return "", fmt.Errorf("unsupported OS: %s", runtime.GOOS)
+		return "", fmt.Errorf("unsupported OS. Only Windows and Linux are supported")
 	}
 }
 
